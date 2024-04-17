@@ -11,12 +11,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
  rel="stylesheet">
  <!-- style -->
+ <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
  <link rel="stylesheet" href="style.css">
  <!-- script -->
+ <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
  <script src="/js/index.js" defer></script>
     <title>Fin-Tech</title>
 </head>
-<body>
+<body id="body">
     <nav  id="navContainer"class="nav-container">
         <div class="logo">
             <h1>Fin-Tech</h1>
@@ -30,10 +32,6 @@
           <div id="saldoOption" class="options">
             <i class="fa-solid fa-dollar-sign fa-fw"></i>
             <p>Saldo</p>
-          </div>
-          <div  id="gastosOption" class="options">
-            <i class="fa-solid fa-hand-holding-dollar fa-fw"></i>
-            <p>Gastos</p>
           </div>
           <div id="cartoesOption" class="options">
             <i class="fa-solid fa-money-check-dollar fa-fw"></i>
@@ -54,119 +52,46 @@
         </div>
     </nav>
     <section id="mainContainer" class="main-container">
-       <div class="values-container">
-        <div  id="saldoContainer" class="saldo-container">
-            <h2>Saldo Atual</h2>
-            <h1 id="saldoValue"> R$ 10,00</h1>
-            <p>Limite de saldo : <span> R$ -10,00</span></p>
-        </div>
-        <div class="inputs-container">
-            <div class="entrada-container">
-                <p>Entrada R$</p>
-                <input type="number" name="entrada" id="">
-            </div>
-            <div class="saida-container">
-                <p>Saída R$</p>
-                <input type="number" name="saida" id="">
-            </div>
 
+        <!-- Saldo -->
+        <div class="saldo-container" id="saldoContainer">
+            <div class="pocket-container">
+                <h1>Saldo atual:</h1>
+                <p>R$ <span id="actualValue">0</span></p>
+                <p>limite: -<span id="limitValue">0</span></p>
+            </div>
+            <div class="in-out-container">
+                <div class="in-container">
+                    <h2>Entrada</h2>
+                    <div>
+                    <input type="number" name="in" id="inInput">
+                    <button id="checkIn">Depositar</button>
+                    </div>
+                </div>
+                <div class="out-container">
+                    <h2>Saida</h2>
+                    <div>
+                    <input type="number" name="out" id="outInput">
+                    <button id="checkOut">Retirar</button>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div  id="faturaContainer" class="fatura-container">
-            <h2>Valor de Fatura</h2>
-            <h1 id="saldoValue"> R$ 200,00</h1>
-            <p>Limite cartão : <span> R$ 190,00</span></p>
-            <p>Vencimento : <span> xx/xx</span></p>
-        </div>
-       </div>
-       <div id="servicesContainer" class="services-container">
-        <div class="service">
-            <i class="fa-solid fa-chart-pie fa-fw" ></i>
+
+        <!-- Extrato -->
+        <div class="extract-title">
             <p>Extrato</p>
         </div>
-        <div class="service">
-            <i class="fa-solid fa-sack-dollar fa-fw" ></i>
-            <p>Investimentos</p>
+        <div class="extract-container" id="extractContainer"> 
         </div>
-        <div class="service">
-            <i class="fa-solid fa-mobile-screen-button fa-fw"></i>
-            <p>Recarga</p>
-        </div>
-        <div class="service">
-            <i class="fa-solid fa-car fa-fw"></i>
-            <p>IPVA/Multas...</p>
-        </div>
-        <div class="service">
-            <i class="fa-solid fa-credit-card fa-fw" ></i>
-            <p>Cartões</p>
-        </div>
-        <div class="service">
-            <i class="fa-solid fa-bitcoin-sign fa-fw" ></i>
-            <p>CriptCoin</p>
-        </div>
-       </div>
-       <div id="extractContainer" class="extract-container">
-        <div class="extract">
-            <div class="type">
-                <i class="fa-solid fa-utensils fa-fw" ></i>
-                <P>Refeição</P>
-            </div>
-            <div class="description">
-                <h3>Restaurante Robin-hood</h3>
-                <p>R$ -45,00</p>
-            </div>
-        </div>
-        <div class="extract">
-            <div class="type">
-                <i class="fa-solid fa-wine-bottle fa-fw" ></i>
-                <P>Bar</P>
-            </div>
-            <div class="description">
-                <h3>Bar do Beto</h3>
-                <p>R$ -25,00</p>
-            </div>
-        </div>
-        <div class="extract">
-            <div class="type">
-                <i class="fa-solid fa-utensils fa-fw" ></i>
-                <P>Refeição</P>
-            </div>
-            <div class="description">
-                <h3>McDonald sp</h3>
-                <p>R$ -85,00</p>
-            </div>
-        </div>
-        <div class="extract">
-            <div class="type">
-                <i class="fa-solid fa-shirt fa-fw" ></i>
-                <P>Roupas</P>
-            </div>
-            <div class="description">
-                <h3>Caedu</h3>
-                <p>R$ -108,00</p>
-            </div>
-        </div>
-        <div class="extract">
-            <div class="type">
-                <i class="fa-solid fa-car fa-fw" ></i>
-                <P>Combustivel</P>
-            </div>
-            <div class="description">
-                <h3>Posto Ipiranga</h3>
-                <p>R$ -100,00</p>
-            </div>
-        </div>
-        <div class="extract">
-            <div class="type">
-                <i class="fa-solid fa-hotel fa-fw" ></i>
-                <P>Hotel</P>
-            </div>
-            <div class="description">
-                <h3>Bates Hotel</h3>
-                <p>R$ -89,00</p>
-            </div>
-        </div>
-       </div>
-
     </section>
+
+
+    <!-- Notificações -->
+
 </body>
+<script>
+  AOS.init();
+</script>
+
 </html>
