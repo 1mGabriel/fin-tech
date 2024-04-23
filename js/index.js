@@ -24,6 +24,18 @@ const cardOption = document.querySelector("#cartoesOption")
 const transferContainer = document.querySelector(".transfer-container");
 const transferOption = document.querySelector("#tranferenciasOption")
 
+// Seleção da sessão de trasferencia
+const actualTransferValue = document.querySelector("#actualTransferValue")
+
+const valueToTransfer = document.querySelector("#valueToTransfer")
+
+const transferBtn = document.querySelector("#transfer-btn")
+
+const nameInput = document.querySelector("#name")
+const acountInput = document.querySelector("#acount")
+const agencieInput = document.querySelector("#agencie")
+const passwordInput = document.querySelector("#passwordInput")
+
 
 //pegar data e hora atual:
 // Obtém a data e hora atual
@@ -44,17 +56,48 @@ console.log(dataHoraFormatada);
 
 
 
-// Funções:
+    // Funções:
 
     //trocar sessões:
     switchSections = (sectionShower, sectionName) =>{
-       saldoContainer.className = "hide"
-       cardContainer.className = "hide"
-       transferContainer.className = "hide"
-       sectionShower.className = `${sectionName}-container`
-
+    saldoContainer.className = "hide"
+    cardContainer.className = "hide"
+    transferContainer.className = "hide"
+    sectionShower.className = `${sectionName}-container`
     }
+    const transferFunction = () =>{
+        if(nameInput.value && acountInput.value && agencieInput.value && valueToTransfer.value === ""){
+            notification("Insira um valor", dataFormatada, "#753131");
+        }
+        else if(nameInput.value && acountInput.value && agencieInput.value && valueToTransfer.value <= actualTransferValue){
+            
+        // converter o valor do span em numero
+        const saldoTransferNumber = parseFloat(actualTransferValue.textContent);
+    
+        //converter o valor do input em numero
+        const valueTransferInput = parseFloat(valueToTransfer.value);
+    
+        //somar os valores do input e do span atual
+        const newSaldo = saldoTransferNumber-valueTransferInput;
+    
+        //Atualizar o span  
+        actualValue.innerHTML = newSaldo;
+        limitValue.innerHTML = newSaldo;
+        actualTransferValue.innerHTML = newSaldo;
+        
+        //Notificar a ação
+        notification(`Transferencia de ${valueTransferInput}R$ realizado`, dataFormatada, "#753131");
+    
+        //Criar o extrato
+        createExtract("out-extract","Saída",valueTransferInput,dataFormatada);
+    
+        //Limpando o input
+        outInput.value = "";
+        }
+        }
 
+//atualizar saldo  
+    
 
     //Depositar
     depostiFunction = () =>{
@@ -76,6 +119,7 @@ console.log(dataHoraFormatada);
     //Atualizar o span  
     actualValue.innerHTML = newSaldo;
     limitValue.innerHTML = newSaldo;
+    actualTransferValue.innerHTML = newSaldo
     
     //Notificar a ação
     notification(`Deposito de ${inInput.value}R$ realizado com suceso`, dataFormatada, "#053c30");
@@ -108,9 +152,10 @@ console.log(dataHoraFormatada);
         //Atualizar o span  
         actualValue.innerHTML = newSaldo;
         limitValue.innerHTML = newSaldo;
+        actualTransferValue.innerHTML = newSaldo
         
         //Notificar a ação
-        notification(`Saque de ${outInput.value}R$ realizado com suceso`, dataFormatada, "#753131");
+        notification(`Saque de ${outInput.value}R$ realizado`, dataFormatada, "#753131");
     
         //Criar o extrato
         createExtract("out-extract","Saída",outInput.value,dataFormatada)
@@ -119,7 +164,13 @@ console.log(dataHoraFormatada);
         outInput.value = "";
 
     }
+
 }
+    saqueFunctionToTransfer =()=>{
+        if(valueToTransfer.value===""){
+        
+            }
+    }
 
     //Criar Notificação:
     notification = (ação, date, color)=>{
@@ -175,6 +226,8 @@ console.log(dataHoraFormatada);
         
     }
 
+
+
 //Eventos:
 checkInBtn.addEventListener("click" , ()=>{
     depostiFunction();
@@ -194,3 +247,6 @@ cardOption.addEventListener("click", ()=>{
 transferOption.addEventListener("click", ()=>{
     switchSections(transferContainer, "transfer")
 });
+transferBtn.addEventListener("click", ()=>{
+    transferFunction()
+})

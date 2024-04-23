@@ -448,3 +448,144 @@ background-color: #753131;
 .hide{
     display: none;
 }
+
+@media(max-width : 1440px){
+    .main-container{
+        width: 66rem;
+    }
+    .card-container{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .user-transfer,
+    .transfer-to,
+    .rement-transfer{
+        border: none;
+    }
+    .rement-transfer{
+        width: 15rem;
+    }
+}
+@media(max-width : 1024px){
+    .main-container{
+        width: 40rem;
+    }
+    .transfer-section{
+       display: block;
+       justify-content: center;
+       align-items: center;
+       text-align: center;
+    }
+    .rement-transfer{
+        margin-left: 4.5rem;
+    }
+}
+@media(max-width : 425px){
+    .nav-container{
+       display: flex;
+       flex-direction: row;
+       width: 425px;
+       right: 0;
+
+       margin-left: 0;
+       font-size: 15px;
+    }
+    .user-container{
+        display: none;
+    }
+    .nav-container h1{
+        display: none;
+    }
+    .options-navbar p{
+        display: none;
+    }
+    .options-navbar{
+       justify-content: space-around;
+        display: flex;
+        gap: 6rem;
+        border: none;
+        flex-direction: row;
+    }
+    .options-navbar i{
+        margin-left: 1.5rem;
+    }
+    .main-container{
+        width: 422px;
+        margin-left: 0;
+        margin-top: 5rem;
+    }
+    .saldo-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .pocket-container{
+        width:350px;
+        text-align: center;
+    }
+    .in-out-container{
+        width:350px;
+        text-align: center;
+    }
+    .options{
+     
+    cursor: pointer;
+    width: 0px;
+    gap: 1rem;
+    border: none;
+    align-items: center;
+
+    }
+    .options:hover{
+        border: none;
+        width: 0px;
+    }
+    .cardCredit-container{
+        width: 350px;
+    }
+    .card-fatura{
+        width: 350px;
+    }
+    .value-to-transfer{
+        font-size: 30px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .value-to-transfer-input{
+        width: 200px;
+        height: 30px;
+    }
+    .password input{
+        width: 200px;
+        height: 30px;
+    }
+    .password{
+        font-size: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+    .password i{
+        display: none;
+    }
+    .notification{
+        position: fixed;
+        background-color: #393939;
+        top: 0rem;
+        width: 10rem;
+        color: #959595;
+        border-radius: 10px;
+        font-weight: lighter;
+    }
+    .notification h2{
+        font-size: 15px;
+        text-align: center;
+        font-weight: 300;
+        padding-bottom: 1rem;
+    }
+    .notification p{
+        font-size: 10px;
+        text-align: end;
+    }
+
+}
