@@ -1,6 +1,7 @@
 // seleção:
 const body = document.querySelector("#body")
 
+const saldoContainer = document.querySelector(".saldo-container");
 const saldoOption = document.querySelector("#saldoOption");
 
 const actualValue = document.querySelector("#actualValue");
@@ -16,6 +17,12 @@ const inInput = document.querySelector("#inInput");
 const outInput = document.querySelector("#outInput");
 
 const extractContainer = document.querySelector("#extractContainer");
+
+const cardContainer = document.querySelector(".card-container");
+const cardOption = document.querySelector("#cartoesOption")
+
+const transferContainer = document.querySelector(".transfer-container");
+const transferOption = document.querySelector("#tranferenciasOption")
 
 
 //pegar data e hora atual:
@@ -38,6 +45,16 @@ console.log(dataHoraFormatada);
 
 
 // Funções:
+
+    //trocar sessões:
+    switchSections = (sectionShower, sectionName) =>{
+       saldoContainer.className = "hide"
+       cardContainer.className = "hide"
+       transferContainer.className = "hide"
+       sectionShower.className = `${sectionName}-container`
+
+    }
+
 
     //Depositar
     depostiFunction = () =>{
@@ -157,6 +174,7 @@ console.log(dataHoraFormatada);
 
         
     }
+
 //Eventos:
 checkInBtn.addEventListener("click" , ()=>{
     depostiFunction();
@@ -165,3 +183,14 @@ checkInBtn.addEventListener("click" , ()=>{
 checkOutBtn.addEventListener("click" , ()=>{
     saqueFunction();
 })
+
+saldoOption.addEventListener("click", ()=>{
+    switchSections(saldoContainer,"saldo")
+});
+
+cardOption.addEventListener("click", ()=>{
+    switchSections(cardContainer, "card")
+});
+transferOption.addEventListener("click", ()=>{
+    switchSections(transferContainer, "transfer")
+});

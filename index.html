@@ -16,7 +16,7 @@
  <!-- script -->
  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
  <script src="/js/index.js" defer></script>
-    <title>Fin-Tech</title>
+    <title class="puff-in-hor">Fin-Tech</title>
 </head>
 <body id="body">
     <nav  id="navContainer"class="nav-container">
@@ -37,17 +37,9 @@
             <i class="fa-solid fa-money-check-dollar fa-fw"></i>
             <p>Cartões</p>
           </div>
-          <div id="faturasOption" class="options">
-            <i class="fa-solid fa-receipt fa-fw"></i>
-            <p>Faturas</p>
-          </div>
           <div id="tranferenciasOption" class="options">
             <i class="fa-solid fa-money-bill-transfer fa-fw"></i>
             <p>Trânferencias</p>
-          </div>
-          <div id="emprestimosOption" class="options">
-            <i class="fa-solid fa-comments-dollar fa-fw"></i>
-            <p>Emprestimos</p>
           </div>
         </div>
     </nav>
@@ -78,6 +70,98 @@
             </div>
         </div>
 
+        <div class="card-container hide" id="cardContainer">
+          <div class="cardCredit-container">
+            <h1>Fin-Tech</h1>
+            <p>Gabriel Mata Pereira</p>
+            <p>xxx-xxx-xxx-x      xxxx       xxxxx-x</p>
+        </div>
+        <div class="card-fatura">
+          
+          <h1>Fatura atual</h1>
+          <h2>1340,00$</h2>
+          
+          <div class="extract">
+            <i class="fa-solid fa-utensils fa-fw"></i>
+            <h1>Restaurante</h1>
+            <h1>120,00 R$</h1>
+          </div>
+          <div class="extract">
+            <i class="fa-solid fa-utensils fa-fw"></i>
+            <h1>Restaurante</h1>
+            <h1>120,00 R$</h1>
+          </div>
+          <div class="extract">
+            <i class="fa-solid fa-utensils fa-fw"></i>
+            <h1>Restaurante</h1>
+            <h1>120,00 R$</h1>
+          </div>
+          <div class="extract">
+            <i class="fa-solid fa-utensils fa-fw"></i>
+            <h1>Restaurante</h1>
+            <h1>120,00 R$</h1>
+          </div>
+          <div class="extract">
+            <i class="fa-solid fa-utensils fa-fw"></i>
+            <h1>Restaurante</h1>
+            <h1>120,00 R$</h1>
+          </div>
+          <div class="extract">
+            <i class="fa-solid fa-utensils fa-fw"></i>
+            <h1>Restaurante</h1>
+            <h1>120,00 R$</h1>
+          </div>
+          <div class="extract">
+            <i class="fa-solid fa-utensils fa-fw"></i>
+            <h1>Restaurante</h1>
+            <h1>120,00 R$</h1>
+          </div>
+          <div class="extract">
+            <i class="fa-solid fa-utensils fa-fw"></i>
+            <h1>Restaurante</h1>
+            <h1>120,00 R$</h1>
+          </div>
+        </div>
+        <div class="card-limit">
+          <h1>Limite Disponivel</h1>
+          <h2>340,00$</h2>
+        </div>
+        </div>
+
+        <div class="transfer-container hide" id="transferContainer">
+          <div class="transfer-section">
+            <div class="user-transfer">
+              <h1>Saldo atual</h1>
+              <p>R$ <span id="actualValue">0</span></p>
+            </div>
+            <div class="transfer-to">
+              <h1>Transferir para</h1>
+              <i class="fa-solid fa-right-left"></i>
+            </div>
+            <div class="rement-transfer">
+              <label for="Name">Nome:</label>
+              <input type="text" id="name">
+              <label for="acount">Conta:</label>
+              <input type="text" id="acount">
+              <label for="agencie">Agência:</label>
+              <input type="text" id="agencie">
+            </div>
+          </div>
+          <div class="value-password-sectrion">
+            <div class="value-to-transfer">
+              <label for="valueToTranser">Valor:</label>
+              <input class="value-to-transfer-input" type="number" name="valueToTranser" id="valueToTranser">
+              
+            </div>
+            <div class="password">
+              <label for="senha">Senha</label>
+              <input type="password" name="senha" id="passwordInput">
+              <i class="fa-solid fa-eye"></i>
+              <button id="transfer-btn">Executar</button>
+            </div>
+          </div>
+
+        </div>
         <!-- Extrato -->
         <div class="extract-title">
             <p>Extrato</p>
